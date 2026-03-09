@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   // Vercel chạy tốt nhất với base là '/' (root),
   // giúp các route của React Router không bị lỗi 404 khi tải lại trang.
-  base: "./",
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

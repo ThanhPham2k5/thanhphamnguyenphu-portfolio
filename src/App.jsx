@@ -84,7 +84,6 @@ const AnimatedRoutes = memo(() => {
     { path: "/projects", Component: Projects },
     // { path: "/cp", Component: CP },
     { path: "/contact", Component: Contact },
-    { path: "*", Component: () => <Navigate to="/" replace /> },
   ];
 
   return (
@@ -135,7 +134,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/thanhphamnguyenphu-portfolio">
+    <Router>
       <ScrollToTop />
       <Layout
         theme={theme}
