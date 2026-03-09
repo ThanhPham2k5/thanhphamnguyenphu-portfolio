@@ -1,6 +1,8 @@
 import React, { useMemo, memo } from "react";
 import { GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
+import sguLogo from "../../public/assets/logos/SGU-LOGO.png";
+import mdcLogo from "../../public/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg";
 
 // --- Animation Variants (The "Staggered Entrance" Pattern) ---
 // This container will orchestrate the animation for the whole page
@@ -82,7 +84,7 @@ EducationCard.displayName = "EducationCard";
 // --- Static Data (No changes needed) ---
 const ACADEMICS_DATA = [
   {
-    logo: "@/assets/logos/SGU-LOGO.png",
+    logo: sguLogo,
     alt: "SGU Logo",
     title: "Sai Gon University",
     link: "https://www.sgu.edu.vn/",
@@ -92,7 +94,7 @@ const ACADEMICS_DATA = [
     score: "8.51 / 10",
   },
   {
-    logo: "@/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg", // Đổi tên file cho gọn
+    logo: mdcLogo, // Đổi tên file cho gọn
     alt: "Mac Dinh Chi High School Logo",
     title: "Mac Dinh Chi High School",
     link: "https://thptmacdinhchi.hcm.edu.vn/",
