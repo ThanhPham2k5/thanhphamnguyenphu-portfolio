@@ -42,7 +42,14 @@ const SOCIAL_LINKS = [
   },
 ];
 
-const TAGS = ["Web Design", "Web Development", "Testing"];
+const TAGS = [
+  "All",
+  "Full-stack",
+  "Software Engineering",
+  "Software Testing (QA)",
+  "Java & Enterprise",
+  "System Design",
+];
 
 //change the resume url
 const RESUME_URL =
