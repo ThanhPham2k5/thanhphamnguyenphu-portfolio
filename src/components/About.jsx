@@ -93,7 +93,7 @@ export default memo(function About() {
           aria-label="Profile photo of Pham Nguyen Phu Thanh"
         >
           <img
-            src={`${import.meta.env.BASE_URL}assets/MyPhotograph.jpg`}
+            src="/assets/MyPhotograph.jpg"
             alt="Pham Nguyen Phu Thanh"
             loading="lazy"
             decoding="async"
