@@ -1,8 +1,8 @@
 import React, { useMemo, memo } from "react";
 import { GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
-import sguLogo from "../../public/assets/logos/SGU-LOGO.png";
-import mdcLogo from "../../public/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg";
+import sguLogo from "@/assets/logos/SGU-LOGO.png";
+import mdcLogo from "@/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg";
 
 // --- Animation Variants (The "Staggered Entrance" Pattern) ---
 // This container will orchestrate the animation for the whole page
