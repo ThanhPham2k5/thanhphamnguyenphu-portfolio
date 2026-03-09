@@ -82,7 +82,7 @@ EducationCard.displayName = "EducationCard";
 // --- Static Data (No changes needed) ---
 const ACADEMICS_DATA = [
   {
-    logo: "/assets/logos/SGU-LOGO.png",
+    logo: "@/assets/logos/SGU-LOGO.png",
     alt: "SGU Logo",
     title: "Sai Gon University",
     link: "https://www.sgu.edu.vn/",
@@ -92,7 +92,7 @@ const ACADEMICS_DATA = [
     score: "8.51 / 10",
   },
   {
-    logo: "/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg", // Đổi tên file cho gọn
+    logo: "@/assets/logos/THPTMacinhChi-1749811237-1749811252.jpg", // Đổi tên file cho gọn
     alt: "Mac Dinh Chi High School Logo",
     title: "Mac Dinh Chi High School",
     link: "https://thptmacdinhchi.hcm.edu.vn/",
