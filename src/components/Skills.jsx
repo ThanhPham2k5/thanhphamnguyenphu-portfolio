@@ -61,7 +61,7 @@ const SkillSection = memo(({ section, hoveredTag, onTagHover, onTagLeave }) => {
           />
         );
       }),
-    [tags, title, hoveredTag, onTagHover, onTagLeave]
+    [tags, title, hoveredTag, onTagHover, onTagLeave],
   );
 
   return (
@@ -86,12 +86,48 @@ SkillSection.displayName = "SkillSection";
 
 // --- Static Data (No changes needed) ---
 const SKILLS_SECTIONS = [
-    { icon: <Code className="w-6 h-6" />, title: "Programming Languages", tags: ["C", "C++", "Java", "JavaScript", "Python", "HTML", "CSS"] },
-    { icon: <Layers className="w-6 h-6" />, title: "Frameworks & Libraries", tags: ["React", "Tailwind CSS", "SFML", "NumPy", "Pandas"] },
-    { icon: <Terminal className="w-6 h-6" />, title: "Tools & Platforms", tags: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Sublime Text"] },
-    { icon: <Sparkles className="w-6 h-6" />, title: "Interests", tags: ["Competitive Programming", "DSA", "Machine Learning", "Web Development"] },
+  {
+    icon: <Code className="w-6 h-6" />,
+    title: "Programming Languages",
+    tags: ["JavaScript", "TypeScript", "Java", "PHP", "HTML5", "CSS3", "LaTeX"],
+  },
+  {
+    icon: <Layers className="w-6 h-6" />,
+    title: "Frameworks & Libraries",
+    tags: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "Tailwind CSS",
+      "Bootstrap",
+    ],
+  },
+  {
+    icon: <Terminal className="w-6 h-6" />,
+    title: "Tools & Platforms",
+    tags: [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Postman",
+      "Figma",
+      "Bitwarden",
+      "Adobe Premiere Pro",
+    ],
+  },
+  {
+    icon: <Sparkles className="w-6 h-6" />,
+    title: "Core Competencies",
+    tags: [
+      "Software Engineering",
+      "Software Testing (QA)",
+      "System Analysis",
+      "RESTful APIs",
+      "UI/UX Design",
+    ],
+  },
 ];
-
 
 // --- Main Skills Component ---
 const SkillsComponent = memo(function Skills() {
@@ -110,18 +146,21 @@ const SkillsComponent = memo(function Skills() {
         className="flex flex-col items-center w-full"
       >
         {/* Item 1: The header text block */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
-                <Settings2 className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
-                Skills & Interests
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                Here you'll find a snapshot of my technical toolkit and passions. I
-                believe in learning by doing, and my skills reflect a blend of academic
-                depth and hands-on project work.
-            </p>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center text-center"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
+            <Settings2 className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
+            Skills & Interests
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+            Here you'll find a snapshot of my technical toolkit and passions. I
+            believe in learning by doing, and my skills reflect a blend of
+            academic depth and hands-on project work.
+          </p>
         </motion.div>
-        
+
         {/* Item 2: The entire skill card grid animates in as one block... */}
         <motion.div
           variants={containerVariants} // It's also a container for its own children

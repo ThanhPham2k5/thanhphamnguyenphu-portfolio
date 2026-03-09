@@ -27,7 +27,6 @@ const itemVariants = {
   },
 };
 
-
 // --- Child Component (No changes needed) ---
 const ProjectCard = memo(({ project }) => {
   return (
@@ -75,19 +74,56 @@ const ProjectCard = memo(({ project }) => {
 });
 ProjectCard.displayName = "ProjectCard";
 
-
 // --- Main Projects Component ---
 function ProjectsComponent() {
   const projectsData = useMemo(
     () => [
-      { title: "Text File Compressor", desc: "Built a robust, lossless text file compressor in C++ using the LZW algorithm, applying OOP and advanced algorithms. Achieved ~44% file size reduction on real-world files with efficient compression and decompression.", tags: ["C++", "LZW Algorithm", "OOPS"], links: [{ type: "code", href: "https://github.com/shashank2401/file-compressor-in-cpp" }] },
-      { title: "Pathfinding Visualizer", desc: "Interactive C++/SFML visualizer for Dijkstra's and A* algorithms. Features dynamic obstacles, diagonal movement, OOP, and optimized data structures for smooth, real-time animations.", tags: ["C++", "SFML", "Dijkstra's", "A*", "OOPS", "Data Structures"], links: [{ type: "code", href: "https://github.com/shashank2401/pathfinding-visualizer-in-cpp" }] },
-      { title: "Codeforces Visualizer", desc: "A minimal web app to view and compare Codeforces profiles. Shows key stats, rating history, and performance trends with clean visualizations. Built for fast, distraction-free, side-by-side comparisons.", tags: ["React", "Vite", "JavaScript", "Tailwind CSS", "Codeforces API"], links: [{ type: "demo", href: "https://cf-visualizer-rho.vercel.app" }, { type: "code", href: "https://github.com/shashank2401/cf-visualizer" }] },
-      { title: "GitHub Profile Visualizer", desc: "A dynamic app for exploring and comparing GitHub user profiles. Visualizes rich statistics, activity timelines, and repository insights, including a contribution heatmap. Supports side-by-side comparisons and offers both dark and light modes.", tags: ["React", "Vite", "JavaScript", "Tailwind CSS", "GitHub API"], links: [{ type: "demo", href: "https://github-profile-visualizer-six.vercel.app/" }, { type: "code", href: "https://github.com/shashank2401/github-profile-visualizer" }] },
-      { title: "Weather App", desc: "A sleek, responsive weather application delivering real-time weather updates for any city. Features location-based forecasts, intuitive search suggestions, and seamless toggling between Celsius and Fahrenheit.", tags: ["HTML", "CSS", "JavaScript", "Weather API", "Responsive Design"], links: [{ type: "demo", href: "https://weather-app-zeta-three-62.vercel.app/" }, { type: "code", href: "https://github.com/shashank2401/weather-app" }] },
-      { title: "Soil-Water Characteristic Curve Prediction", desc: "Used Artificial Neural Networks (ANNs) to predict SWCC parameters from soil properties for plastic soils. Improved geotechnical prediction for slope stability and foundation design.", tags: ["Python", "TensorFlow", "ANN", "Soil Mechanics", "Data Analysis"], links: [{ type: "code", href: "https://github.com/shashank2401/swcc-prediction-using-ann" }] },
+      {
+        title: "ThienTam - Pharmacy Management System",
+        desc: "An enterprise-grade Java desktop application for pharmaceutical inventory and retail management. Features a robust UI built with JTable for complex data visualization and integrated with SQL Server for reliable medical data persistence.",
+        tags: ["Java Swing", "SQL Server", "Enterprise Software"],
+        links: [
+          {
+            type: "code",
+            href: "https://github.com/ThanhPham2k5/ThienTam.git",
+          },
+        ],
+      },
+      {
+        title: "Tasty-5 - BBQ E-Commerce Platform",
+        desc: "A responsive web application for BBQ retail, focusing on clean UI/UX and high-speed performance. Utilizes vanilla HTML/CSS/JS with structured JSON data architecture to manage product catalogs and user interactions.",
+        tags: ["HTML5", "CSS3", "JavaScript", "JSON Data"],
+        links: [
+          {
+            type: "code",
+            href: "https://github.com/ThanhPham2k5/Tasty-5.git",
+          },
+        ],
+      },
+      {
+        title: "Smart School Bus Tracking System (SSB 1.0)",
+        desc: "A full-stack real-time tracking solution for student transportation. Leverages Next.js and NestJS for high-performance server-side rendering and API management, backed by a flexible MongoDB document database.",
+        tags: ["Next.js", "NestJS", "MongoDB", "Real-time Tracking"],
+        links: [
+          {
+            type: "code",
+            href: "https://github.com/ThanhPham2k5/Software-Engineering.git",
+          },
+        ],
+      },
+      {
+        title: "Flogin - Product Management Dashboard",
+        desc: "A professional bookstore management dashboard designed as a primary environment for advanced QA testing. Integrates a React frontend with a Spring Boot backend and H2 in-memory database for rapid, isolated test execution.",
+        tags: ["React", "Spring Boot", "H2 Database", "QA/QC Testing"],
+        links: [
+          {
+            type: "code",
+            href: "https://github.com/ThanhPham2k5/Software-Testing.git",
+          },
+        ],
+      },
     ],
-    []
+    [],
   );
 
   return (
@@ -101,14 +137,20 @@ function ProjectsComponent() {
         className="flex flex-col items-center w-full"
       >
         {/* Item 1: The header text block */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
-                <FolderKanban className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
-                Projects
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-10">
-                Here are some of the projects I've worked on, ranging from algorithm visualizers and utilities to frontend tools and machine learning models. Each project reflects my passion for clean design, efficient problem-solving, and practical implementation.
-            </p>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center text-center"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
+            <FolderKanban className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
+            Projects
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-10">
+            Here are some of the projects I've worked on, ranging from algorithm
+            visualizers and utilities to frontend tools and machine learning
+            models. Each project reflects my passion for clean design, efficient
+            problem-solving, and practical implementation.
+          </p>
         </motion.div>
 
         {/* Item 2: The entire project card grid animates in as one block... */}

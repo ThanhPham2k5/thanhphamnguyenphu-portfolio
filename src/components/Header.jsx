@@ -21,20 +21,29 @@ const navLinks = [
   { to: "/skills", label: "Skills" },
   { to: "/academics", label: "Education" },
   { to: "/projects", label: "Projects" },
-  { to: "/cp", label: "CP" },
+  // { to: "/cp", label: "CP" },
   { to: "/contact", label: "Contact" },
 ];
 
 const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
   const location = useLocation();
 
-  const handleThemeToggle = useCallback((e) => {
-    toggleTheme();
-    e.currentTarget.blur();
-  }, [toggleTheme]);
+  const handleThemeToggle = useCallback(
+    (e) => {
+      toggleTheme();
+      e.currentTarget.blur();
+    },
+    [toggleTheme],
+  );
 
-  const ThemeIcon = useMemo(() => (currentTheme === "light" ? Moon : Sun), [currentTheme]);
-  const themeAriaLabel = useMemo(() => `Switch to ${currentTheme === "light" ? "dark" : "light"} mode`, [currentTheme]);
+  const ThemeIcon = useMemo(
+    () => (currentTheme === "light" ? Moon : Sun),
+    [currentTheme],
+  );
+  const themeAriaLabel = useMemo(
+    () => `Switch to ${currentTheme === "light" ? "dark" : "light"} mode`,
+    [currentTheme],
+  );
 
   return (
     <motion.header
@@ -45,22 +54,29 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
       style={{ willChange: "transform", transform: "translate3d(0, 0, 0)" }}
     >
       {/* THE FIX: Changed Link to point to "/" */}
-      <Link to="/" className="text-2xl sm:text-3xl font-extrabold text-primary tracking-wide select-none hover:opacity-80 transition">
-        Shashank Raj
+      <Link
+        to="/"
+        className="text-2xl sm:text-3xl font-extrabold text-primary tracking-wide select-none hover:opacity-80 transition"
+      >
+        Thanh Pham
       </Link>
 
       <nav className="hidden min-[935px]:flex gap-2 sm:gap-4 md:gap-6 items-center">
-        {navLinks.map(link => {
+        {navLinks.map((link) => {
           // THE FIX: Check for both '/' and '/about' to highlight the "About" link
-          const isActive = location.pathname === link.to || (link.to === '/about' && location.pathname === '/');
+          const isActive =
+            location.pathname === link.to ||
+            (link.to === "/about" && location.pathname === "/");
           return (
             <Link
               key={link.to}
               to={link.to}
               className={`px-3 py-1.5 rounded-md text-base font-medium transition-colors duration-150
-                ${isActive
-                  ? "text-primary bg-primary/10 dark:bg-primary/20"
-                  : "text-muted-foreground hover:text-primary hover:bg-primary/5"}`}
+                ${
+                  isActive
+                    ? "text-primary bg-primary/10 dark:bg-primary/20"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                }`}
             >
               {link.label}
             </Link>

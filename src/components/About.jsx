@@ -46,7 +46,7 @@ const TAGS = ["Web Design", "Web Development", "Testing"];
 
 //change the resume url
 const RESUME_URL =
-  "https://drive.google.com/file/d/1FIq3CNO73-M9GXjIhZAYo49gQGxgmudO/view?usp=sharing";
+  "https://drive.google.com/file/d/16694XwI3mjJcQqeNNpH7-vGfuJveAMBx/view?usp=sharing";
 
 export default memo(function About() {
   const socialLinksElements = useMemo(
@@ -122,14 +122,15 @@ export default memo(function About() {
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-4 text-center md:text-left">
-            I'm a passionate student with a strong interest in{" "}
+            I'm a Software Engineering student passionate about
             <span className="text-foreground font-medium">
-              Software Development
-            </span>{" "}
-            and tackling challenging problems. I love crafting efficient
-            solutions and exploring new technologies. My journey in tech
-            combines rigorous academic training with hands-on project
-            experience.
+              {" "}
+              Full-Stack Development{" "}
+            </span>
+            and solving complex algorithmic challenges. I thrive on engineering
+            seamless user experiences and exploring modern tech stacks. My
+            journey integrates academic excellence with a proven track record of
+            end-to-end project implementation.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">

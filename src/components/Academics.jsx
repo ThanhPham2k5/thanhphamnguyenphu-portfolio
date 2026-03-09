@@ -27,10 +27,10 @@ const itemVariants = {
   },
 };
 
-
 // --- Child Component (No changes needed) ---
 const EducationCard = memo(({ education }) => {
-  const { logo, alt, title, link, program, year, scoreLabel, score } = education;
+  const { logo, alt, title, link, program, year, scoreLabel, score } =
+    education;
 
   return (
     // This card is now an item in the list's stagger animation
@@ -51,7 +51,9 @@ const EducationCard = memo(({ education }) => {
         />
       </div>
       <div className="flex flex-col text-left gap-1">
-        <h3 className="text-lg sm:text-xl font-semibold text-foreground">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+          {title}
+        </h3>
         <a
           href={link}
           target="_blank"
@@ -65,7 +67,10 @@ const EducationCard = memo(({ education }) => {
             <span className="font-medium text-foreground/80">Year:</span> {year}
           </p>
           <p>
-            <span className="font-medium text-foreground/80">{scoreLabel}:</span> {score}
+            <span className="font-medium text-foreground/80">
+              {scoreLabel}:
+            </span>{" "}
+            {score}
           </p>
         </div>
       </div>
@@ -74,40 +79,41 @@ const EducationCard = memo(({ education }) => {
 });
 EducationCard.displayName = "EducationCard";
 
-
 // --- Static Data (No changes needed) ---
 const ACADEMICS_DATA = [
   {
-    logo: "/assets/logos/iit_bhu.png",
-    alt: "IIT BHU Logo",
-    title: "Indian Institute of Technology (BHU) Varanasi",
-    link: "https://iitbhu.ac.in/dept/civ",
-    program: "B.Tech in Civil Engineering",
-    year: "2023 – 2027",
-    scoreLabel: "CGPA",
-    score: "8.14 / 10",
+    logo: "/assets/logos/SGU-LOGO.png",
+    alt: "SGU Logo",
+    title: "Sai Gon University",
+    link: "https://www.sgu.edu.vn/",
+    program: "Bachelor of Software Engineering", // Thêm "Bachelor of" cho chuẩn bằng cử nhân
+    year: "2023 – 2028",
+    scoreLabel: "GPA",
+    score: "8.51 / 10",
   },
   {
-    logo: "/assets/logos/sps_rohini.jpg",
-    alt: "SPS Rohini Logo",
-    title: "Sachdeva Public School, Rohini",
-    link: "https://www.spsrohini.com/",
-    program: "CBSE (Class XII - 2022, Class X - 2020)",
-    year: "2022",
-    scoreLabel: "Percentage",
-    score: "Class XII - 92.80%, Class X - 97.00%",
+    logo: "/assets/logos/mdc-logo.png", // Đổi tên file cho gọn
+    alt: "Mac Dinh Chi High School Logo",
+    title: "Mac Dinh Chi High School",
+    link: "https://thptmacdinhchi.hcm.edu.vn/",
+    program: "National High School Graduation Diploma", // Chuẩn quốc tế cho bằng THPT Việt Nam
+    year: "2020 – 2023", // Nên để khoảng thời gian 3 năm cấp 3
+    scoreLabel: "Academic Rank", // Dùng Academic Rank nghe chuyên nghiệp hơn Type
+    score: "Excellent", // Ghi xếp loại cao nhất bạn đạt được
   },
 ];
-
 
 // --- Main Academics Component ---
 const AcademicsComponent = memo(function Academics() {
   const educationCards = useMemo(
     () =>
       ACADEMICS_DATA.map((education, index) => (
-        <EducationCard key={`${education.title}-${index}`} education={education} />
+        <EducationCard
+          key={`${education.title}-${index}`}
+          education={education}
+        />
       )),
-    []
+    [],
   );
 
   return (
@@ -121,16 +127,27 @@ const AcademicsComponent = memo(function Academics() {
         className="flex flex-col items-center w-full"
       >
         {/* Item 1: The header text block */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
-                <GraduationCap className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
-                Education
-            </h2>
-            <motion.p variants={itemVariants} className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-                My academic journey has been a blend of rigorous learning and practical
-                application, spanning general academics and engineering. Here are the
-                institutions and milestones that have shaped my foundation.
-            </motion.p>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center text-center"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
+            <GraduationCap className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
+            Education
+          </h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
+          >
+            Bridging the gap between
+            <span className="text-foreground font-medium">
+              {" "}
+              Academic Rigor{" "}
+            </span>
+            and real-world execution, my journey reflects a deep immersion in
+            software engineering principles. Explore the educational milestones
+            that have shaped my expertise and fueled my passion for innovation.
+          </motion.p>
         </motion.div>
 
         {/* Item 2: The entire list of education cards */}
