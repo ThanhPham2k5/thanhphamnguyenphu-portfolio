@@ -5,7 +5,10 @@ import path from "path";
 
 export default defineConfig({
   // THE FIX: Thêm base với tên repo của bạn
-  base: "/thanhphamnguyenphu-portfolio/",
+  base:
+    process.env.NODE_ENV === "production"
+      ? "/thanhphamnguyenphu-portfolio/"
+      : "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
